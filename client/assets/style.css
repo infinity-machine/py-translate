@@ -1,3 +1,33 @@
 body {
     background-color: rgb(213, 200, 200);
 }
+
+.margin-lock {
+    width: 380px;
+    margin: auto;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-stack {
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.txt-center{
+    text-align: center;
+}
+
+.txt-left {
+    text-align: left
+}
+
+#input {
+    resize: none;
+}

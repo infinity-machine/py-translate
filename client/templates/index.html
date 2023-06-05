@@ -10,14 +10,20 @@
 </head>
 
 <body>
-    <main>
-        <header>
+    <main class="margin-lock">
+        <header class="txt-center">
             <h1>TRANSLATE BOT</h1>
-            <p>enter some text in english to see it translated to spanish before your eyes!!!</p>
         </header>
         <section>
-            <form id="form">
-                <input type="text">
+            <form id="form" class="flex-container flex-stack">
+                <textarea id="input" cols="40" rows="5"></textarea>
+                <div class="flex-container flex-center">
+                    <select id="select-1">
+                    </select>
+                    <p id="to">TO</p>
+                    <select id="select-2">
+                    </select>
+                </div>
                 <button>TRANSLATE</button>
             </form>
         </section>
