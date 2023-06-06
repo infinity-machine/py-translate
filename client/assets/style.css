@@ -28,6 +28,11 @@ body {
     text-align: left
 }
 
-#input {
+.textarea {
     resize: none;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
 }
