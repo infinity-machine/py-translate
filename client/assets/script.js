@@ -3,6 +3,7 @@ const doc_input = document.getElementById('input');
 const doc_response = document.getElementById('response');
 const doc_select1 = document.getElementById('select-1');
 const doc_select2 = document.getElementById('select-2');
+const doc_clearbtn = document.getElementById('clear')
 
 const appendOptionsToSelect = (select_element, languages, codes) => {
     Object.values(languages).map((language, index) => {
@@ -49,5 +50,11 @@ const handleSubmit = async (e) => {
     doc_response.value = translated.text;
 }
 
+const clearInput = (e) => {
+    e.preventDefault()
+    doc_input.value = '';
+}
+
 renderDropboxes();
 doc_form.addEventListener('submit', handleSubmit);
+doc_clearbtn.addEventListener('click', clearInput);
