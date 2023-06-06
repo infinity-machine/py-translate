@@ -24,12 +24,7 @@ const renderDropboxes = async () => {
     appendOptionsToSelect(doc_select2, languages, lang_codes)
 };
 
-const translateAPI = async (string, input_lang, target_lang) => {
-    const input_object = {
-        text: string,
-        src: input_lang,
-        dest: target_lang
-    }
+const translateAPI = async (input_object) => {
     const response = await fetch('/api/', {
         method: 'POST',
         headers: {
@@ -43,17 +38,16 @@ const translateAPI = async (string, input_lang, target_lang) => {
 
 const handleSubmit = async (e) => {
     e.preventDefault();
-    const translated = await translateAPI(
-        doc_input.value, doc_select1.value, doc_select2.value
-    );
+    if (doc_input.value === '') return false;
+    const input_data = {
+        text: doc_input.value,
+        src: doc_select1.value,
+        dest: doc_select2.value
+    }
+    console.log(input_data)
+    const translated = await translateAPI(input_data);
     doc_response.innerText = translated.text;
-    doc_input.value = '';
 }
 
-const onPageLoad = async () => {
-    const data = await renderDropboxes();
-    // console.log(data);
-}
-
-onPageLoad();
+renderDropboxes()
 doc_form.addEventListener('submit', handleSubmit);
