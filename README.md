@@ -1,1 +1,3 @@
 Using django to test the googletrans API...
+[HEROKU DEPLOYMENT](https://py-translate.herokuapp.com/)
+If the link is slow to load, it's only cuz my dinos are sleeping. Honk shoo! Honk shoo!
