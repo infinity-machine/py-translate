@@ -41,6 +41,7 @@ const handleSubmit = async (e) => {
     e.preventDefault();
     if (doc_input.value === '') return false;
     if (doc_response.classList.contains('hidden')) doc_response.classList.remove('hidden');
+    doc_response.value = '...RESPONSE LOADING...'
     const input_data = {
         text: doc_input.value,
         src: doc_select1.value,
