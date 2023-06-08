@@ -42,6 +42,11 @@ const appendOptionsToSelect = (select_element, languages, codes) => {
     });
 };
 
+const selectDefaults = () => {
+    doc_select1.value = 'en';
+    doc_select2.value = 'es';
+};
+
 const fetchSupportedLanguages = async () => {
     const response = await fetch('/api/');
     const data = await response.json();
@@ -56,6 +61,6 @@ const renderDropboxes = async () => {
     appendOptionsToSelect(doc_select2, languages, lang_codes);
 };
 
-renderDropboxes();
+renderDropboxes().then(() => selectDefaults());
 doc_form.addEventListener('submit', handleSubmit);
 doc_clearbtn.addEventListener('click', clearInput);
